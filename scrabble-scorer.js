@@ -36,7 +36,9 @@ function transform(oldPointStructure) {
      //newPointStructure[oldPointStructure[pointValue][i].toLowerCase()] = pointValue;
       //console.log(newPointStructure[oldPointStructure[pointValue][i].toLowerCase()]+ " " + pointValue);
     }
-  }
+  } 
+  // console.log(typeof newPointStructure);
+  // console.log(newPointStructure);
   return newPointStructure;
 }
 
@@ -139,7 +141,7 @@ const scoringAlgorithms = [simpleScoreObject,bonusVowelsObject,scrabbleObject];
 
 //function transform() {};
 
-let newPointStructure;
+let newPointStructure =transform(oldPointStructure);
 
 function runProgram() {
    let word;//create bucket for word coming back from function initialPrompt
@@ -149,7 +151,14 @@ function runProgram() {
    let scrabbleScoringMethodNumber;//catche the scoring method that is retruned by scrabbleMethod
    word = initialPrompt();//calls initialPromtpt to fill word bucket
    scrabbleScoringMethodNumber = scorerPrompt();
-   newPointStructure = transform(oldPointStructure);//create new point structure based on old point struct
+   //let newPointStructure;
+  //newPointStructure = //create new point structure based on old point struct
+
+  // console.log(typeof newPointStructure);
+  // console.log(newPointStructure);
+
+
+
    console.log("Score For '" + word + "' : " + scoringAlgorithms[scrabbleScoringMethodNumber].scoringFunction(word));
   //console.log(scrabbleScore("vitamin"));
 
@@ -169,6 +178,8 @@ function runProgram() {
   //  console.log("scoringFunction result: ", scoringAlgorithms[scrabbleScoringMethodNumber].scoringFunction(word));
 
 }  
+
+
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
