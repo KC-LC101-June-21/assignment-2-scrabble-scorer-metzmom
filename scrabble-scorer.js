@@ -32,7 +32,8 @@ function transform(oldPointStructure) {
   let newPointStructure = {};
   for (const pointValue in oldPointStructure) {
     for (let i = 0; i < oldPointStructure[pointValue].length; i++) {
-      newPointStructure[oldPointStructure[pointValue][i].toLowerCase()] = pointValue;
+      newPointStructure[oldPointStructure[pointValue][i].toLowerCase()] = parseInt(pointValue,10);
+     //newPointStructure[oldPointStructure[pointValue][i].toLowerCase()] = pointValue;
       //console.log(newPointStructure[oldPointStructure[pointValue][i].toLowerCase()]+ " " + pointValue);
     }
   }
